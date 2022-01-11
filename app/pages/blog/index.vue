@@ -46,12 +46,12 @@ const Pagination = () => import('@/components/commons/pagination.vue');
 
   head(): MetaInfo {
     return {
-      title: 'Blog',
+      title: 'News & Updates',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Blog index',
+          content: 'News & Updates Regarding The Caregiver Act',
         },
       ],
     };
