@@ -1,7 +1,3 @@
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gomah/bluise)
-
-
-
 Matt's Notes
 
 https://thecaregiveract.netlify.app/admin
@@ -13,6 +9,9 @@ https://thecaregiveract.netlify.app/admin
 
 
 Template stuff:
+
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gomah/bluise)
 
 # Bluise - A Nuxt.js & Netlify CMS boilerplate.
 
