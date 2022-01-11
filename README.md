@@ -8,7 +8,7 @@ https://thecaregiveract.netlify.app/admin
 
 
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7eee91ef-cdab-424d-a59a-fac91ff4c022/deploy-status)](https://app.netlify.com/sites/thecaregiveract/deploys)
 
 
 
