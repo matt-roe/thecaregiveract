@@ -1,6 +1,7 @@
 <template>
   <footer class="footer -mx-4 md:mx-0">
     <div class="container mx-auto pb-6 flex justify-center">
+      <h3 >Contact Form</h4>
       <h4 v-if="isSent">Thank you - we'll be in touch shortly.</h4>
       <form
             v-else
