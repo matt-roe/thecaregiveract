@@ -32,6 +32,13 @@
               placeholder="your@email.com"
               aria-label="Email address"
             />
+            <v-autocomplete
+              auto-select-first
+              clearable
+              filled
+              rounded
+              :items="states"
+            ></v-autocomplete>
 
             <button
               class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
@@ -76,6 +83,11 @@ export default class Home extends Vue {
     email: '',
   };
 
+  states = [
+    {"name":"Montana", "value":"MT"},
+    {"name":"Washington", "value":"WA"}
+  ];
+
   encode(data): string {
     return Object.keys(data)
       .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -90,7 +102,7 @@ export default class Home extends Vue {
 
   async handleSubmit(): Promise<void> {
     if (!this.validEmail(this.form.email)) {
-      this.$refs.emailInput.focus();
+      //this.$refs.emailInput.focus();
       return;
     }
 
