@@ -1,55 +1,6 @@
 <template>
   <footer class="footer -mx-4 md:mx-0">
     <div class="container mx-auto pb-6 flex justify-center">
-      <h3 >Contact Form</h4>
-      <h4 v-if="isSent">Thank you - we'll be in touch shortly.</h4>
-      <form
-            v-else
-            @submit.prevent="handleSubmit"
-            name="footer-contact"
-            netlify
-            class="flex items-center border-b border-b-2 border-blue-400 py-2"
-          >
-
-          <input
-              ref="nameInput"
-              v-model="form.name"
-              class="appearance-none mb-36 bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              aria-label="Your name"
-            />
-          <input required
-              ref="emailInput"
-              v-model="form.email"
-              class="appearance-none mb-36 bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
-              type="text"
-              name="email"
-              placeholder="your@email.com"
-              aria-label="Email address"
-            />
-
-          <textarea required
-              rows="1" 
-              type="text" 
-              ref="messageInput"
-              name="message" 
-              class="appearance-none mb-36 bg-transparent border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none" 
-              placeholder="Your message" 
-              v-model="form.message" 
-              aria-label="Your message"
-            ></textarea>
-
-          <button
-              class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
-              type="submit"
-            >
-              Send
-            </button>
-      </form>
-    </div>
-    <div class="container mx-auto pb-6 flex justify-center">
       <a href="https://github.com/Gomah/bluise">
           <svg
             baseProfile="tiny"
@@ -73,6 +24,9 @@
             </g>
           </svg>
         </a>
+      </div>
+      <div class="container mx-auto pb-6 flex justify-center">
+        <a href="https://www.vecteezy.com/free-vector/cartoon">Cartoon Vectors by Vecteezy</a>
       </div>
   </footer>
   
