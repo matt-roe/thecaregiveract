@@ -3,7 +3,8 @@
     <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
         <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
-
+      </div>
+      <div class="flex flex-col w-full xl:w-2/5">
         <div class="mb-12 xl:mb-0">
           <h4 v-if="isSignedUp">Thank you - your participation is much appreciated.</h4>
 
@@ -71,23 +72,23 @@
       <div class="flex flex-col w-full xl:w-2/5">
         <img
           alt="Hero"
-          class="rounded shadow-xl"
+          class="rounded"
           src="@/static/images/uploads/elder1.jpg"
         />
       </div>
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
+        <div v-html="$md.render(section1)" class="home__welcome markdown" />
       </div>
     </div>
 
     <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
+        <div v-html="$md.render(section2)" class="home__welcome markdown" />
       </div>
       <div class="flex flex-col w-full xl:w-2/5 focus-visible:translate-x-12">
         <img
           alt="Hero"
-          class="rounded shadow-xl"
+          class="rounded"
           src="@/static/images/uploads/elder2.jpg"
         />
       </div>
@@ -97,12 +98,12 @@
       <div class="flex flex-col w-full xl:w-2/5">
         <img
           alt="Hero"
-          class="rounded shadow-xl"
+          class="rounded"
           src="@/static/images/uploads/elder3.jpg"
         />
       </div>
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
-        <div v-html="$md.render(welcomeText)" class="home__welcome markdown" />
+        <div v-html="$md.render(section3)" class="home__welcome markdown" />
       </div>
     </div>
 
@@ -121,6 +122,9 @@ import settings from '@/content/settings/general.json';
 })
 export default class Home extends Vue {
   welcomeText = settings.welcomeText;
+  section1 = settings.section1;
+  section2 = settings.section2;
+  section3 = settings.section3;
 
   get posts(): Post[] {
     return this.$store.state.posts;
