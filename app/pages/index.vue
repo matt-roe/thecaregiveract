@@ -32,12 +32,18 @@
               class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
               type="text"
               name="email"
-              placeholder="your@email.com"
+              placeholder="Your@email.com"
               aria-label="Email address"
             />
             </div>
             <div>
-              <select v-model="form.selectedState">
+              <select 
+              class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"  v-model="form.selectedState"
+              ref="selectedState"
+              name="state"
+              placeholder="Resident State"
+              aria-label="Resident state"
+              >
                 <option v-for="state in states" v-bind:value="state.value">
                   {{ state.text }}
                 </option>
@@ -45,7 +51,13 @@
               <span>Selected: {{ form.selectedState }}</span>
             </div>
             <div>
-              <select v-model="form.selectedMethods" multiple>
+              <select 
+              class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+              ref="selectedMethods"
+              name="methods"
+              placeholder="Contact Method"
+              aria-label="Contact method"
+              v-model="form.selectedMethods" multiple>
                 <option>E-mail</option>
                 <option>Call</option>
                 <option>Mail</option>
@@ -139,7 +151,6 @@ export default class Home extends Vue {
   };
 
   states = [
-    {"text":"Please select your resident state:", "value":"NONE"},
     {"text":"Alabama", "value":"AL"},
     {"text":"Alaska", "value":"AK"},
     {"text":"Arizona", "value":"AZ"},
