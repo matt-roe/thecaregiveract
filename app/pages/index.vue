@@ -6,8 +6,9 @@
       </div>
       <div class="flex flex-col w-full xl:w-2/5">
         <div class="mb-12 xl:mb-0">
-          <h4 v-if="isSignedUp">Thank you - your participation is much appreciated.</h4>
-
+          <h3 v-if="isSignedUp">Thank you - your participation is much appreciated.</h3>
+          <p v-if="isSignedUp">{{form.selectedState}}</p>
+          <p v-if="isSignedUp">{{form.selectedMethod}}</p>
           <form
             v-else
             @submit.prevent="handleSubmit"
@@ -15,7 +16,7 @@
             netlify
             class="flex items-center border-b border-b-2 border-blue-400 py-2"
           >
-          <div class="grid grid-flow-col auto-rows-max">
+          <div class="grid grid-flow-row auto-rows-max">
             <div>
               <input
                 ref="nameInput"
@@ -48,7 +49,6 @@
                   {{ state.text }}
                 </option>
               </select>
-              <span>Selected: {{ form.selectedState }}</span>
             </div>
             <div>
               <select 
@@ -62,15 +62,13 @@
                 <option>Call</option>
                 <option>Mail</option>
               </select>
-            <br>
-            <span>Selected: {{ form.selectedMethods }}</span>
             </div>
             <div>
               <button
                 class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
                 type="submit"
               >
-                Send
+                Next
               </button>
             </div>
           </div>
