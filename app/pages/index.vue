@@ -14,16 +14,18 @@
             netlify
             class="flex items-center border-b border-b-2 border-blue-400 py-2"
           >
-            <input
-              ref="nameInput"
-              v-model="form.name"
-              class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              aria-label="Your name"
-            />
-            <input
+          <div class="grid grid-flow-col auto-cols-max">
+            <div>
+              <input
+                ref="nameInput"
+                v-model="form.name"
+                class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                aria-label="Your name"
+              />
+              <input
               ref="emailInput"
               v-model="form.email"
               class="appearance-none mb-36 bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -32,29 +34,33 @@
               placeholder="your@email.com"
               aria-label="Email address"
             />
-
-            <select v-model="form.selectedState">
-              <option v-for="state in states" v-bind:value="state.value">
-                {{ state.text }}
-              </option>
-            </select>
-            <span>Selected: {{ form.selectedState }}</span>
-
-            <select v-model="form.selectedMethods" multiple>
-              <option>E-mail</option>
-              <option>Call</option>
-              <option>Mail</option>
-            </select>
+            </div>
+            <div>
+              <select v-model="form.selectedState">
+                <option v-for="state in states" v-bind:value="state.value">
+                  {{ state.text }}
+                </option>
+              </select>
+              <span>Selected: {{ form.selectedState }}</span>
+            </div>
+            <div>
+              <select v-model="form.selectedMethods" multiple>
+                <option>E-mail</option>
+                <option>Call</option>
+                <option>Mail</option>
+              </select>
             <br>
             <span>Selected: {{ form.selectedMethods }}</span>
-
-            <button
-              class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
-              type="submit"
-            >
-              Send
-            </button>
-
+            </div>
+            <div>
+              <button
+                class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
+                type="submit"
+              >
+                Send
+              </button>
+            </div>
+          </div>
           </form>
         </div>
       </div>
@@ -127,10 +133,6 @@ export default class Home extends Vue {
     selectedState: '',
     selectedMethods: []
   };
-
-  
-
-  
 
   states = [
     {"text":"Please select your resident state:", "value":"NONE"},
