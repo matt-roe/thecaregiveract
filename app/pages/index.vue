@@ -32,58 +32,10 @@
               placeholder="your@email.com"
               aria-label="Email address"
             />
-            <select v-model="selected">
-              <option disabled value="">Please select one</option>
-              <option>Alabama</option>
-              <option>Alaska</option>
-              <option>Arizona</option>
-              <option>Arkansas</option>
-              <option>California</option>
-              <option>Colorado</option>
-              <option>Connecticut</option>
-              <option>Delaware</option>
-              <option>Florida</option>
-              <option>Georgia</option>
-              <option>Hawaii</option>
-              <option>Idaho</option>
-              <option>Illinois</option>
-              <option>Indiana</option>
-              <option>Iowa</option>
-              <option>Kansas</option>
-              <option>Kentucky</option>
-              <option>Louisiana</option>
-              <option>Maine</option>
-              <option>Maryland</option>
-              <option>Massachusetts</option>
-              <option>Michigan</option>
-              <option>Minnesota</option>
-              <option>Mississippi</option>
-              <option>Missouri</option>
-              <option>Montana</option>
-              <option>Nebraska</option>
-              <option>Nevada</option>
-              <option>New Hampshire</option>
-              <option>New Jersey</option>
-              <option>New Mexico</option>
-              <option>New York</option>
-              <option>North Carolina</option>
-              <option>North Dakota</option>
-              <option>Ohio</option>
-              <option>Oklahoma</option>
-              <option>Oregon</option>
-              <option>Pennsylvania</option>
-              <option>Rhode Island</option>
-              <option>South Carolina</option>
-              <option>South Dakota</option>
-              <option>Tennessee</option>
-              <option>Texas</option>
-              <option>Utah</option>
-              <option>Vermont</option>
-              <option>Virginia</option>
-              <option>Washington</option>
-              <option>West Virginia</option>
-              <option>Wisconsin</option>
-              <option>Wyoming</option>
+            <select v-model="selectedState">
+              <option v-for="state in states" v-bind:value="state.value">
+                {{ state.text }}
+              </option>
             </select>
             <span>Selected: {{ selected }}</span>
 
@@ -130,9 +82,60 @@ export default class Home extends Vue {
     email: '',
   };
 
+  selectedState: '';
+
   states = [
-    {"name":"Montana", "value":"MT"},
-    {"name":"Washington", "value":"WA"}
+    {"text":"Please select your resident state:", "value":"NONE"},
+    {"text":"Alabama", "value":"AL"},
+    {"text":"Alaska", "value":"AK"},
+    {"text":"Arizona", "value":"AZ"},
+    {"text":"Arkansas", "value":"AR"},
+    {"text":"California", "value":"CA"},
+    {"text":"Colorado", "value":"CO"},
+    {"text":"Connecticut", "value":"CT"},
+    {"text":"Delaware", "value":"DE"},
+    {"text":"Florida", "value":"FL"},
+    {"text":"Georgia", "value":"GA"},
+    {"text":"Hawaii", "value":"HI"},
+    {"text":"Idaho", "value":"ID"},
+    {"text":"Illinois", "value":"IL"},
+    {"text":"Indiana", "value":"IN"},
+    {"text":"Iowa", "value":"IA"},
+    {"text":"Kansas", "value":"KS"},
+    {"text":"Kentucky", "value":"KY"},
+    {"text":"Louisiana", "value":"LA"},
+    {"text":"Maine", "value":"ME"},
+    {"text":"Maryland", "value":"MD"},
+    {"text":"Massachusetts", "value":"MA"},
+    {"text":"Michigan", "value":"MI"},
+    {"text":"Minnesota", "value":"MN"},
+    {"text":"Mississippi", "value":"MS"},
+    {"text":"Missouri", "value":"MO"},
+    {"text":"Montana", "value":"MT"},
+    {"text":"Nebraska", "value":"NE"},
+    {"text":"Nevada", "value":"NV"},
+    {"text":"New Hampshire", "value":"NH"},
+    {"text":"New Jersey", "value":"NJ"},
+    {"text":"New Mexico", "value":"NM"},
+    {"text":"New York", "value":"NY"},
+    {"text":"North Carolina", "value":"NC"},
+    {"text":"North Dakota", "value":"ND"},
+    {"text":"Ohio", "value":"OH"},
+    {"text":"Oklahoma", "value":"OK"},
+    {"text":"Oregon", "value":"OR"},
+    {"text":"Pennsylvania", "value":"PA"},
+    {"text":"Rhode Island", "value":"RI"},
+    {"text":"South Carolina", "value":"SC"},
+    {"text":"South Dakota", "value":"SD"},
+    {"text":"Tennessee", "value":"TN"},
+    {"text":"Texas", "value":"TX"},
+    {"text":"Utah", "value":"UT"},
+    {"text":"Vermont", "value":"VT"},
+    {"text":"Virginia", "value":"VA"},
+    {"text":"Washington", "value":"WA"},
+    {"text":"West Virginia", "value":"WV"},
+    {"text":"Wisconsin", "value":"WI"},
+    {"text":"Wyoming", "value":"WY"}
   ];
 
   encode(data): string {
