@@ -8,9 +8,9 @@
         <div class="mb-12 xl:mb-0">
           <h3 v-if="isSignedUp">Thank you - your participation is much appreciated.</h3>
           <p v-if="isSignedUp">{{form.selectedState}}</p>
-          <p v-if="isSignedUp" v-for="selected in form.selectedMethod">
+          <div v-if="isSignedUp" v-for="selected in form.selectedMethod">
            {{selected}}
-          </p>
+          </div>
           <form
             v-else
             @submit.prevent="handleSubmit"
@@ -80,7 +80,7 @@
     </div>
 
 
-    <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div class="py-12 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-2/5">
         <img
           alt="Hero"
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div class="py-12 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
         <div v-html="$md.render(section2)" class="home__welcome markdown" />
       </div>
@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <div class="py-24 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div class="py-12 md:py-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
       <div class="flex flex-col w-full xl:w-2/5">
         <img
           alt="Hero"
