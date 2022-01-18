@@ -8,7 +8,9 @@
         <div class="mb-12 xl:mb-0">
           <h3 v-if="isSignedUp">Thank you - your participation is much appreciated.</h3>
           <p v-if="isSignedUp">{{form.selectedState}}</p>
-          <p v-if="isSignedUp">{{form.selectedMethod}}</p>
+          <p v-if="isSignedUp" v-for="selected in form.selectedMethod">
+           {{selected}}
+          </p>
           <form
             v-else
             @submit.prevent="handleSubmit"
